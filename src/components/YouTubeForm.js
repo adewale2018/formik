@@ -35,7 +35,7 @@ function YouTubeForm() {
     onSubmit,
     validate,
   });
-
+  console.log("TOUCHED", formik.touched);
   return (
     <div>
       <h1>Formik</h1>
@@ -48,8 +48,11 @@ function YouTubeForm() {
             id='name'
             onChange={formik.handleChange}
             value={formik.values.name}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.name ? <div className="error">{formik.errors.name}</div> : null}
+          {formik.errors.name ? (
+            <div className='error'>{formik.errors.name}</div>
+          ) : null}
         </div>
         <div className='form-control'>
           <label htmlFor='email'>Email</label>
@@ -59,8 +62,11 @@ function YouTubeForm() {
             id='email'
             onChange={formik.handleChange}
             value={formik.values.email}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.email ? <div className="error">{formik.errors.email}</div> : null}
+          {formik.errors.email ? (
+            <div className='error'>{formik.errors.email}</div>
+          ) : null}
         </div>
         <div className='form-control'>
           <label htmlFor='channel'>Channel</label>
@@ -70,8 +76,11 @@ function YouTubeForm() {
             id='channel'
             onChange={formik.handleChange}
             value={formik.values.channel}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.channel ? <div className="error">{formik.errors.channel}</div> : null}
+          {formik.errors.channel ? (
+            <div className='error'>{formik.errors.channel}</div>
+          ) : null}
         </div>
         <button type='submit'>Submit</button>
       </form>
